@@ -1,0 +1,48 @@
+<h1>Singh C, Levy WB (2017)</h1>
+<p/>
+This is the readme for the model associated with the paper:<p/>
+Singh C, Levy WB (2017) A consensus layer V pyramidal neuron can sustain interpulse-interval coding. PLoS One 12:e0180839<p/>
+This NEURON model was contributed by C Singh. If you need more help than provided below, please see this help page:<p/>
+<a href="https://senselab.med.yale.edu/ModelDB/NEURON_DwnldGuide.cshtml">https://senselab.med.yale.edu/ModelDB/NEURON_DwnldGuide.cshtml</a>
+<p/>
+<h1>running</h1>
+
+<ul>
+<li>the files in the mechanism folder need to compiled by NEURON</li>
+<li>use the NEURON gui to launch the file mechanism/run_act.hoc</li>
+<li>this will run the code with a current injection and save data on channels in the AIS and voltages accross the neuron to the data folder</li>
+</ul>
+Afer a minute or so a graph appears whose first action potential should look something like:<p/>
+<img src="./screenshot.png"><p/>
+which is similar to the AP in figure 5 of the paper.<p/>
+<h1>overview</h1>
+
+<ul>
+<li>the mechanism folder includes mod files for channels as well as the main running file
+<ul>
+<li>files with "_stoch" in the name are stochastic</li>
+</ul></li>
+<li>main.hoc initializes everything
+<ul>
+<li>the morphology folder includes files detailing the shapes of different axons</li>
+<li>density<em>mechs.hoc distributes the passive and active conductances through the NEURON</li>
+<li>inject</em>soma.hoc inserts an IClamp at the soma and runs the simulation</li>
+<li>c.ses loads a gui for viewing the voltage over time
+<ul>
+<li>recording.hoc defines methods for recording / saving data</li>
+</ul></li>
+<li>mechanism/run_act.hoc runs and displays an example action potential</li>
+</ul></li>
+<li>the model is largely based on: (Hu, et al. 2009): "Distinct contributions of Na v 1.6 and Na v 1.2 in action potential initiation and backpropagation.", which was itself built up through several studies
+<ul>
+<li>the main change is the change to stochastic Na channels   </li>
+<li>other minor changes are described in the paper (Singh &amp; Levy, 2017) "A consensus layer V pyramidal neuron can sustain interpulse-interval coding."</li>
+</ul></li>
+<li>part of model is based on
+<ul>
+<li>Mainen, Z. F. and Sejnowski, T. J.  Nature 382: 363-6 (1996)</li>
+<li>Yu, Y., Shu, Y., et al.  J Neurosci 28: 7260-72 (2008)</li>
+<li>Shu, Y., Hasenstaub, A., et al.  Nature 441: 761-5. (2006)</li>
+<li>Kole MH, Hallermann S, Stuart GJ (2006) J Neurosci 26:1677-87</li>
+</ul></li>
+</ul>

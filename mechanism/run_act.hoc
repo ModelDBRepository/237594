@@ -1,0 +1,30 @@
+cmd_trial_num = 0
+trials_per_sweep = 1000
+sweep = int(cmd_trial_num/trials_per_sweep) + 1
+strdef folder,stoch_str,v_str,cmd_str,chans_str,v_str
+
+//////////// normal /////////////
+tstop = 50+50      // ms
+stoch = 1           // 1 for stochastic
+intensity = 1   // nA
+dur = tstop
+gamma = 10e-12 // set pS/channel
+
+v_str = "data/out.txt"
+chans_str = "data/chans.txt"
+
+// constant
+del = 50            // delay
+dt = 0.01 // ms
+soma_cm = .9
+
+// output
+stoch_str="det"
+if(stoch==1){
+    stoch_str="stoch"
+}
+printf("intensity: %f",intensity)
+
+// run
+chdir("../")
+load_file("main.hoc")
